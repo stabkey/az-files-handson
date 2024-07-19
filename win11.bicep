@@ -12,7 +12,7 @@ param adminPassword string
 param dnsLabelPrefix string = toLower('${vmName}-${uniqueString(resourceGroup().id, vmName)}')
 
 @description('Name for the Public IP used to access the Virtual Machine.')
-param publicIpName string = 'win11-pip'
+param publicIpName string = '${prefix}-win11-pip'
 
 @description('SKU for the Public IP used to access the Virtual Machine.')  
 @allowed([  
