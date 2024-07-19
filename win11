@@ -12,7 +12,7 @@ param adminPassword string
 param dnsLabelPrefix string = toLower('${vmName}-${uniqueString(resourceGroup().id, vmName)}')
 
 @description('Name for the Public IP used to access the Virtual Machine.')
-param publicIpName string = 'myPublicIP'
+param publicIpName string = '${vmName}-pip'
 
 @description('Allocation method for the Public IP used to access the Virtual Machine.')
 @allowed([
@@ -22,7 +22,6 @@ param publicIPAllocationMethod string = 'Static'
 
 @description('SKU for the Public IP used to access the Virtual Machine.')
 @allowed([
-  'Basic'
   'Standard'
 ])
 param publicIpSku string = 'Standard'
@@ -34,13 +33,13 @@ param publicIpSku string = 'Standard'
 param OSVersion string = 'win11-21h2-pro'
 
 @description('Size of the virtual machine.')
-param vmSize string = 'Standard_D2s_v5'
+param vmSize string = 'Standard_D2_v5'
 
 @description('Location for all resources.')
 param location string = resourceGroup().location
 
 @description('Name of the virtual machine.')
-param vmName string = '${prefix}-vm'
+param vmName string = '${prefix}-win11'
 
 @description('Security Type of the Virtual Machine.')
 @allowed([
