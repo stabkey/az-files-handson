@@ -145,7 +145,7 @@ resource nic 'Microsoft.Network/networkInterfaces@2023-09-01' = {
         name: 'ipconfig1'
         properties: {
           privateIPAllocationMethod: 'Static'
-          privateIPAddress: '10.0.0.4' 
+          privateIPAddress: '10.0.0.5' 
           publicIPAddress: {
             id: publicIp.id
           }
