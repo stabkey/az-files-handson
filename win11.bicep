@@ -14,11 +14,10 @@ param dnsLabelPrefix string = toLower('${vmName}-${uniqueString(resourceGroup().
 @description('Name for the Public IP used to access the Virtual Machine.')
 param publicIpName string = '${prefix}-win11-pip'
 
-@description('SKU for the Public IP used to access the Virtual Machine.')  
-@allowed([  
-  'Basic' // 追加  
-  'Standard'  
-])  
+@description('Allocation method for the Public IP used to access the Virtual Machine.')
+@allowed([
+  'Static'
+])
 param publicIPAllocationMethod string = 'Static'
 
 @description('SKU for the Public IP used to access the Virtual Machine.')  
