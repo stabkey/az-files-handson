@@ -21,10 +21,11 @@ param publicIpName string = '${prefix}-win11-pip'
 ])  
 param publicIPAllocationMethod string = 'Static'
 
-@description('SKU for the Public IP used to access the Virtual Machine.')
-@allowed([
-  'Standard'
-])
+@description('SKU for the Public IP used to access the Virtual Machine.')  
+@allowed([  
+  'Basic' // 追加  
+  'Standard'  
+])  
 param publicIpSku string = 'Standard'
 
 @description('The Windows version for the VM. This will pick a fully patched image of this given Windows version.')
