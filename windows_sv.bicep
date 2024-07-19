@@ -11,8 +11,8 @@ param adminPassword string
 @description('Unique DNS Name for the Public IP used to access the Virtual Machine.')
 param dnsLabelPrefix string = toLower('${vmName}-${uniqueString(resourceGroup().id, vmName)}')
 
-@description('Name for the Public IP used to access the Virtual Machine.')
-param publicIpName string = '${vmName}-pip`
+@description('Name for the Public IP used to access the Virtual Machine.')  
+param publicIpName string = '${vmName}-pip' // 修正  
 
 @description('Allocation method for the Public IP used to access the Virtual Machine.')
 @allowed([
